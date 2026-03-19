@@ -61,17 +61,123 @@ sudo apt-get install aprsc
 ```
 
 ### 3. Configure APRSC
-Before starting edit the configuration file. 
-
+ 
 ```bash
-sudo nano /etc/aprsc/aprsc.conf
+sudo nano /opt/aprsc/etc/aprsc.conf
 ```
-
-### 4. Enable and start service
-```bash 
+ 
+### Basic Server Configuration
+ 
+Edit the configuration file and define the main parameters:
+ 
+**Main Parameters:**
+- `ServerId`: `my_callsing`
+- `PassCode`: `my_passcode`
+- `MyAdmin`: `"my_user, my_callsing"`
+- `MyEmail`: `email@example.com`
+ 
+**Listening Ports:**
+- TCP/UDP 10152 → backbone (full feed)
+- TCP/UDP 14580 → clients/igate
+- UDP 8080 → packet sending
+ 
+**APRS-IS Uplink Configuration:**
+ 
+```
+Uplink "Core rotate" full tcp rotate.aprs.net 10152
+```
+ 
+**Logs and Resources:**
+- Run directory: `RunDir data`
+- Log rotation: `LogRotate 10 5`
+- File/connection limits: `FileLimit 10000`
+- HTTP Status and Upload enabled on ports 14501 and 8080
+ 
+**Example configuration snippet:**
+ 
+```conf
+ServerId TI2ABC
+PassCode 22441
+MyAdmin "server, TI2ABC"
+MyEmail email@example.com
+ 
+# Listening ports
+Listen fullfeed  tcp 10152 fullfeed
+Listen fullfeed  udp 10152 fullfeed
+Listen igate     tcp 14580
+Listen igate     udp 14580
+Listen dupesent  udp 8080
+ 
+# Uplink
+Uplink "Core rotate" full tcp rotate.aprs.net 10152
+ 
+# Resources
+RunDir data
+LogRotate 10 5
+FileLimit 10000
+```
+ 
+---
+ 
+## 3b. Connect a Client to Receive Traffic
+ 
+After the server is running, you can connect a local client using a different SSID:
+ 
+```bash
+telnet localhost 14580
+user TI2ABC-1 pass 22441 filter b/TI3WTI-10
+```
+ 
+This allows you to receive and filter traffic from a test iGate (e.g., TI3WTI-10).
+ 
+---
+ 
+## 3c. Manage the service with systemd
+ 
+**Enable service to start automatically:**
+```bash
 sudo systemctl enable aprsc
+```
+ 
+**Start the service:**
+```bash
 sudo systemctl start aprsc
 ```
+ 
+**Stop the service:**
+```bash
+sudo systemctl stop aprsc
+```
+ 
+**Restart the service:**
+```bash
+sudo systemctl restart aprsc
+```
+ 
+**View service status:**
+```bash
+sudo systemctl status aprsc
+```
+ 
+**View logs in real-time:**
+```bash
+tail -f /opt/aprsc/logs/aprsc.log
+```
+ 
+**View entire log:**
+```bash
+cat /opt/aprsc/logs/aprsc.log
+```
+ 
+---
+ 
+## 3d. Update aprsc in the future
+ 
+```bash
+sudo apt-get update && sudo apt-get upgrade
+```
+ 
+---
 
 ### 5. Install Webmin
 ```bash
