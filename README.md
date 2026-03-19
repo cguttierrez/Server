@@ -38,12 +38,31 @@ The system is built on **Ubuntu Server 24.04 LTS** and integrates APRSC with web
 sudo apt update && sudo apt upgrade -y
 ```
 
+## Installing APRSC
+
+### 1. Confifure package repository for apt.
+Create a file a using 
+
+```bash
+deb http://aprsc-dist.he.fi/aprsc/apt noble main
+```
+
+Add the gpg key used to sign the packages.
+
+```bash
+gpg --keyserver keyserver.ubuntu.com --recv D43AD4708A2DA1139F250B3294E40E5320D8AE3C
+sudo gpg --export D43AD4708A2DA1139F250B3294E40E5320D8AE3C > /etc/apt/trusted.gpg.d/aprsc.key.gpg
+```
+
 ### 2. Install APRSC
 ```bash
-sudo apt install aprsc
+sudo apt-get update
+sudo apt-get install aprsc
 ```
 
 ### 3. Configure APRSC
+Before starting edit the configuration file. 
+
 ```bash
 sudo nano /etc/aprsc/aprsc.conf
 ```
