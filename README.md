@@ -125,7 +125,7 @@ After the server is running, you can connect a local client using a different SS
  
 ```bash
 telnet localhost 14580
-user TI2ABC-1 pass 22441 filter b/TI3WTI-10
+user TI2ABC-1 pass 22441 filter r/9.9/-84.1/500 b/TI3WTI-10
 ```
  
 This allows you to receive and filter traffic from a test iGate (e.g., TI3WTI-10).
