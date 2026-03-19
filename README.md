@@ -191,6 +191,8 @@ Access Webmin:
 ```
 https://<server-ip>:10000
 ```
+## Packets received
+<img width="717" height="897" alt="image" src="https://github.com/user-attachments/assets/ddaf23bf-4707-457f-8ca0-383dd3ff5a12" />
 
 ## Features
 
