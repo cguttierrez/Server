@@ -100,8 +100,8 @@ https://<server-ip>:10000
 
 ## Authors
 
-Carlos Gutierrez
-Jorge Schofield
+- Carlos Gutierrez
+- Jorge Schofield
 
 ## Notes
 
