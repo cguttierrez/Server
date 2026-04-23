@@ -218,6 +218,55 @@ https://<server-ip>:10000
 - Strong Webmin credentials
 - Limit connections
 
+---
+
+## Architecture
+
+### Backend
+- `aprsc`: APRS-IS server that manages packet traffic  
+- Connection to the global APRS network via *uplink*
+
+### Frontend
+- `TrackDirect`: real-time map visualization  
+- WebSocket for dynamic updates
+
+### Database
+- PostgreSQL for historical data storage  
+
+---
+
+## Data Flow
+
+1. Tracker sends APRS packets  
+2. iGate retransmits to APRS-IS  
+3. `aprsc` receives and processes  
+4. TrackDirect collects data  
+5. Data is stored in PostgreSQL  
+6. Data is displayed on the map  
+
+---
+
+## Components 
+
+- **Port 14580** → filtered clients (TrackDirect)  
+- **Port 10152** → full feed  
+- **WebSocket** → `ws://<IP>:8090`  
+
+---
+
+## Result
+
+Real-time visualization of APRS stations on a web map, with storage and historical data access.
+<img width="1600" height="801" alt="image" src="https://github.com/user-attachments/assets/d2a4bf62-46a7-44d5-81bb-3a2f25268bbc" />
+<img width="1600" height="802" alt="image" src="https://github.com/user-attachments/assets/f3dc204a-bfe5-43c5-a0f9-9292aba6ea8e" />
+
+---
+
+## Notes
+
+- A valid APRS callsign and passcode are required  
+- Can run entirely on a single machine  
+- Scalable to integration with real iGates
 
 ## Testing
 
