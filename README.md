@@ -233,6 +233,7 @@ https://<server-ip>:10000
 ### Database
 - PostgreSQL for historical data storage  
 
+<img width="1154" height="881" alt="diagrama_red" src="https://github.com/user-attachments/assets/aae07874-70b9-4621-8e0f-120dcbd0b825" />
 ---
 
 ## Data Flow
@@ -243,6 +244,8 @@ https://<server-ip>:10000
 4. TrackDirect collects data  
 5. Data is stored in PostgreSQL  
 6. Data is displayed on the map  
+
+<img width="1159" height="585" alt="flujo_datos" src="https://github.com/user-attachments/assets/cf227ce6-be11-46e6-8006-aa3eeb6bb90a" />
 
 ---
 
