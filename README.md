@@ -279,6 +279,29 @@ Real-time visualization of APRS stations on a web map, with storage and historic
 - Carlos Gutierrez
 - Jorge Schofield
 
+## References
+
+Canonical Ltd., ``Ubuntu Server Documentation (LTS),'' 2024. [online]. Available: https://ubuntu.com/server/docs. [Accessed: 2026].
+
+\bibitem{ubuntu_server}
+Canonical Ltd., ``Ubuntu Server Guide,'' 2024. [online]. Available: https://help.ubuntu.com. [Accessed: 2026].
+
+\bibitem{webmin}
+Webmin Developers, ``Webmin Documentation,'' 2024. [online]. Available: https://www.webmin.com. [Accessed: 2026].
+
+\bibitem{aprsc}
+aprsc Developers, ``aprsc: APRS-IS Server Software,'' 2024. [online]. Available: https://github.com/hessu/aprsc. [Accessed: 2026].
+
+\bibitem{aprs_spec}
+B. Bruninga, ``APRS Protocol Reference Specification,'' 2000. [online]. Available: http://www.aprs.org/doc/APRS101.PDF. [Accessed: 2026].
+
+\bibitem{trackdirect}
+TrackDirect Project, ``TrackDirect: APRS Tracking Platform,'' 2024. [online]. Available: https://github.com/qvarforth/trackdirect. [Accessed: 2026].
+
+\bibitem{websocket}
+IETF, ``RFC 6455: The WebSocket Protocol,'' 2011. [online]. Available: https://datatracker.ietf.org/doc/html/rfc6455. [Accessed: 2026].
+
+
 ## Notes
 
 Educational and experimental APRS deployment project.
