@@ -48,17 +48,15 @@ a {
 /* Set the position of the map */
 #map-container {
   position: absolute;
-  top: 0px;  
+  top: 120px;
   left: 0;
   bottom: 0;
   width: 100%;
+  z-index: 0;
 }
 .topnav {
-  overflow: hidden;
   background: #003B64 !important; /* Azul TEC */
-
-  z-index: 200;
-  height: 0px;
+  height: 120px;
   display: flex;
   align-items: center;
 }
